@@ -54,7 +54,7 @@ module.exports = (passport) => {
 			// create the new user:
 			const hashedPw = bcrypt.hashSync(password, 10)
 			let isAdmin = false
-			if (email.indexOf('@zenva.com') != -1)
+			if (email.indexOf('shakespeare@we2otters.com') != -1)
 				isAdmin = true
 
 			User.create({email:email, password:hashedPw, isAdmin:isAdmin}, (err, user) => {

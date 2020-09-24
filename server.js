@@ -11,14 +11,17 @@ const login = require('./routes/login')
 const account = require('./routes/account')
 const admin = require('./routes/admin')
 
-mongoose.connect('mongodb://localhost/sample-store', (err, data) => {
-	if (err){
-		console.log('DB Connection Failed')
-		return
-	}
-
-	console.log('DB Connection Success')
+const uri = "mongodb+srv://admin:Jarofdirt%231@cluster0.r0hc5.mongodb.net/<sample-store>?retryWrites=true&w=majority";
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 })
+.then(() => {
+  console.log('MongoDB Connected…')
+})
+.catch(err => console.log(err))
+
+
 
 const app = express()
 app.use(session({

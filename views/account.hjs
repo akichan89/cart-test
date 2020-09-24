@@ -13,7 +13,7 @@
 
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Sample Store</a>
+			<a class="navbar-brand" href="#">Dragon Pal</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    	<span class="navbar-toggler-icon"></span>
 		  	</button>
@@ -30,16 +30,20 @@
 		</nav>
 
 		<div class="container">
-			<h1>Welcome {{user.email}}</h1>
+			<h1>Welcome {{user.firstName}}</h1>
 
 			<div class="row">
 				<div class="col-8">
-					<h3>Items For Sale</h3>
+					<h3>Current Posts</h3>
 					<ol>
 						{{#items}}
 						<li>
 							<div class="item">
 								{{name}}<br />
+								{{description}}<br />
+								{{posts}}<br />
+								
+							
 								<a class="btn btn-success" href="/account/additem/{{id}}">Add</a>
 							</div>
 						</li>
@@ -49,12 +53,14 @@
 				</div>
 
 				<div class="col-4">
-					<h3>My Items</h3>
+					<h3>Favorite Posts</h3>
 					<ol>
 					{{#interested}}
 					<li>
 						<div class="item">
 							{{name}}<br />
+							{{description}}<br />
+							{{posts}}<br />
 							<a class="btn btn-success" href="#">Add</a>
 						</div>
 					</li>

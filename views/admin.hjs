@@ -37,18 +37,20 @@
 					<form action="/admin/additem" method="post">
 						<input type="text" name="name" placeholder="Name" /><br />
 						<input type="text" name="description" placeholder="Description" /><br />
-						<input type="text" name="price" placeholder="Price" /><br />
-						<input type="submit" value="Add Item">
+						<input type="text" name="post" placeholder="post" /><br />
+						<input type="submit" value="add post">
 					</form>
 				</div>
 
 				<div class="col-6">
-					<h3>Current Items</h3>
+					<h3>Current Posts</h3>
 					<ol>
 						{{#items}}
 						<li>
 							<div class="item">
 								{{name}}<br />
+								{{description}}<br />
+								{{posts}}<br />
 								<button>Add</button>
 							</div>
 						</li>
